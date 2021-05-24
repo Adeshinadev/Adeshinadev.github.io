@@ -42,7 +42,7 @@ figure, header, nav, section, article, aside, footer, figcaption {
   outline: 0;
 }
 .additional{
-    padding-top: 30%;
+    padding-top: 100px;
 }
 .clearfix:after {
   content: ".";
@@ -649,7 +649,7 @@ header
       
   }
     .additional{
-        margin-top: 20%;
+        margin-top: 10px !important ;
     }
 }
 
