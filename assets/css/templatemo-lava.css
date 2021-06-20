@@ -66,7 +66,7 @@ html[xmlns] .clearfix {
 }
 
 .price{
-color:#B90828;
+color:#B90828!important;
 }
 ul, li {
   padding: 0;
