@@ -18,7 +18,7 @@
         if ('NDEFReader' in window) {
           const ndef = new NDEFReader();
           await ndef.write({
-            records: [{ recordType: "url", data: "https://w3c.github.io/web-nfc/" }]
+            records: [{ recordType: "url", data: "https://medinotation.com/domain/3b4fdfce0d6bd3" }]
           });
           alert('NFC message written successfully!');
         } else {
