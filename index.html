@@ -3,13 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NFC Writer</title>
+  <title>NFC Tag Writing Instructions</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
-  <div class="container vh-100 d-flex justify-content-center align-items-center">
-    <button id="writeNFC" class="btn btn-primary btn-lg">Write NFC</button>
+  <div class="container">
+    <div class="card shadow-lg p-4">
+      <h2 class="text-center">NFC Tag Writing Instructions</h2>
+      <hr>
+      <p class="lead">Follow these steps to write data to an NFC tag using your device:</p>
+      <ol class="list-group list-group-flush mb-4">
+        <li class="list-group-item">Ensure you have an Android phone with NFC capability.</li>
+        <li class="list-group-item">Make sure that NFC is enabled in your phone's settings.</li>
+        <li class="list-group-item">Open this page in <strong>Google Chrome</strong>. Web NFC is only supported on Chrome on Android devices.</li>
+        <li class="list-group-item">Bring the NFC tag close to your phone and press the <strong>Write NFC</strong> button.</li>
+        <li class="list-group-item">If the operation is successful, you will receive a confirmation message.</li>
+      </ol>
+
+      <div class="alert alert-warning text-center" role="alert">
+        <strong>Note:</strong> Web NFC is <u>not supported</u> on iPhones or other iOS devices at this time.
+      </div>
+
+      <div class="text-center">
+        <button id="writeNFC" class="btn btn-primary btn-lg">Write NFC</button>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -18,7 +45,7 @@
         if ('NDEFReader' in window) {
           const ndef = new NDEFReader();
           await ndef.write({
-            records: [{ recordType: "url", data: "https://medinotation.com/domain/3b4fdfce0d6bd3" }]
+            records: [{ recordType: "url", data: "https://w3c.github.io/web-nfc/" }]
           });
           alert('NFC message written successfully!');
         } else {
